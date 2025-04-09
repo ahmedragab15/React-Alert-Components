@@ -1,0 +1,84 @@
+//*default
+$defaultBg: #1d1f20b5;
+$defaultColor: #c8c8c8;
+$defaultBorder: #c8c8c8;
+
+//*info
+$infoBg: #6464ff14;
+$infoColor: #bcc0ff;
+$infoBorder: #646cff;
+
+//*success
+$successBg: #f6ee0920;
+$successColor: #ffffffd6;
+$successBorder: #38b83852;
+
+//*error
+$errorBg: #c01d1d26;
+$errorColor: #ef8d8dfa;
+$errorBorder: #ff190052;
+
+//*warning
+$warningBg: #ffc5170d;
+$warningColor: #fcd253;
+$warningBorder: #ffd500ca;
+
+@mixin alert($name, $bg, $color, $border) {
+    .#{$name} {
+        border: 1px solid $border;
+        border-radius: 0.8rem;
+        padding: 1.3rem;
+        background-color: $bg;
+        color: $color;
+        margin: 1.5rem 0;
+        transition: 0.4s;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+
+        .alert-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .title {
+                display: flex;
+                align-items: center;
+
+                span svg {
+                    margin-right: 0.6rem;
+                    display: block;
+                }
+
+                h4 {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        p {
+            font-size: 0.9rem;
+            font-weight: 500;
+            line-height: 1.5rem;
+            margin-top: 1.2rem;
+        }
+        a{
+            color: #9499ff;
+            font-weight: 600;
+            &:hover{
+                color: #6b72f1;
+            }
+        }
+
+        .close {
+            cursor: pointer;
+        }
+    }
+}
+
+@include alert("alert-default", $defaultBg, $defaultColor, $defaultBorder);
+@include alert("alert-info", $infoBg, $infoColor, $infoBorder);
+@include alert("alert-success", $successBg, $successColor, $successBorder);
+@include alert("alert-error", $errorBg, $errorColor, $errorBorder);
+@include alert("alert-warning", $warningBg, $warningColor, $warningBorder);
