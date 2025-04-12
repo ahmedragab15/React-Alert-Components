@@ -1,4 +1,3 @@
-// import { RefAttributes } from "react";
 import { ReactNode } from "react";
 import "./index.scss";
 import { X } from "lucide-react";
